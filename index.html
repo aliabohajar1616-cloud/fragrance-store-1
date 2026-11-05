@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بن عوف للعطور | Bin Ouf Perfumes</title>
+  <style>
+    :root {
+      --primary-color: #6b4226;
+      --accent-color: #c5a059;
+      --bg-color: #f4f0eb; /* خلفية بيج دافئة مريحة للعين ومناسبة للعطور */
+      --card-bg: #ffffff;
+      --text-color: #2c221e;
+    }
+    product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #faf6f0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #d9ccbe;
+  margin-bottom: 15px;
+}
+
+
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+    body { background-color: var(--bg-color); color: var(--text-color); padding: 25px 15px; }
+
+    /* الهيدر بتدرجات فخمة */
+    header {
+      text-align: center;
+      padding: 35px 20px;
+      background: linear-gradient(135deg, #3d2617, #6b4226);
+      color: var(--accent-color);
+      border-radius: 16px;
+      margin-bottom: 35px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      border: 1px solid #d4af37;
+    }
+
+    header h1 { font-size: 2.4rem; font-weight: bold; margin-bottom: 8px; letter-spacing: 1.5px; }
+    header p { color: #f3ebd8; font-size: 1.15rem; font-weight: 500; }
+
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* كارت المنتج بتصميم راقي */
+    .product-card {
+      background-color: var(--card-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(107, 66, 38, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e3d7cb;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(107, 66, 38, 0.15); }
+
+    .product-img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--accent-color);
+    }
+
+    .product-details { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
+
+    .product-title { font-size: 1.4rem; color: #3d2617; margin-bottom: 12px; font-weight: bold; }
+
+    .product-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      background: #faf6f0;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px dashed #d9ccbe;
+    }
+
+    .info-badge { font-size: 0.95rem; font-weight: bold; color: #555; }
+    .price-badge { font-size: 1.15rem; font-weight: bold; color: var(--primary-color); }
+
+    .order-form { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 5px; text-align: right; }
+
+    .form-group label { font-size: 0.9rem; font-weight: bold; color: #3d2617; }
+
+    .required-star { color: #b33939; margin-right: 3px; font-size: 1rem; }
+
+    .form-control {
+      padding: 11px;
+      border: 1px solid #d4c5b9;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      background-color: #fdfcfb;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus { 
+      border-color: var(--primary-color); 
+      box-shadow: 0 0 5px rgba(107, 66, 38, 0.2);
+      background-color: #fff;
+    }
+
+    /* زر الواتساب بتصميم فخم وجذاب */
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 13px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn-whatsapp:hover { background-color: #1ebd59; }
+    .btn-whatsapp:active { transform: scale(0.98); }
+
+    .error-msg {
+      color: #b33939;
+      font-size: 0.85rem;
+      font-weight: bold;
+      display: none;
+      text-align: center;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>بن عوف للعطور</h1>
+    <p>فخامة العطور الشرقية والغربية بين يديك</p>
+  </header>
+
+  <div class="products-container">
+
+    <!-- عطر 1 -->
+    <div class="product-card">
+      <img src="etar1.jpg" alt="عطر ديمارلي ألتير" class="product-img">
+      <div class="product-details">
+        <h2 class="product-title">عطر ديمارلي ألتير</h2>
+        <div class="product-info">
+          <span class="info-badge">الحجم: 50 مل</span>
+          <span class="price-badge">السعر: 70 دينار</span>
+        </div>
+        <form class="order-form" onsubmit="sendWhatsAppOrder(event, 'عطر ديمارلي ألتير', '50 مل', '70 دينار', 'etar1.jpg', 'name1', 'phone1', 'qty1', 'err1')">
+          <div class="form-group">
+            <label>الاسم الثلاثي <span class="required-star">*</span></label>
+            <input type="text" id="name1" class="form-control" placeholder="أدخل اسمك الثلاثي">
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف <span class="required-star">*</span></label>
+            <input type="tel" id="phone1" class="form-control" placeholder="09X XXXXXXX">
+          </div>
+          <div class="form-group">
+            <label>الكمية المطلوبة</label>
+            <input type="number" id="qty1" class="form-control" value="1" min="1" max="100">
+          </div>
+          <p id="err1" class="error-msg">الرجاء تعبئة الاسم ورقم الهاتف أولاً</p>
+          <button type="submit" class="btn-whatsapp">طلب عبر الواتساب</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- عطر 2 -->
+    <div class="product-card">
+      <img src="etar2.jpg" alt="عطر خمرة" class="product-img">
+      <div class="product-details">
+        <h2 class="product-title">عطر خمرة</h2>
+        <div class="product-info">
+          <span class="info-badge">الحجم: 50 مل</span>
+          <span class="price-badge">السعر: 90 دينار</span>
+        </div>
+        <form class="order-form" onsubmit="sendWhatsAppOrder(event, 'عطر خمرة', '50 مل', '90 دينار', 'etar2.jpg', 'name2', 'phone2', 'qty2', 'err2')">
+          <div class="form-group">
+            <label>الاسم الثلاثي <span class="required-star">*</span></label>
+            <input type="text" id="name2" class="form-control" placeholder="أدخل اسمك الثلاثي">
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف <span class="required-star">*</span></label>
+            <input type="tel" id="phone2" class="form-control" placeholder="09X XXXXXXX">
+          </div>
+          <div class="form-group">
+            <label>الكمية المطلوبة</label>
+            <input type="number" id="qty2" class="form-control" value="1" min="1" max="100">
+          </div>
+          <p id="err2" class="error-msg">الرجاء تعبئة الاسم ورقم الهاتف أولاً</p>
+          <button type="submit" class="btn-whatsapp">طلب عبر الواتساب</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- عطر 3 -->
+    <div class="product-card">
+      <img src="etar3.jpg" alt="عطر كراش أون مي" class="product-img">
+      <div class="product-details">
+        <h2 class="product-title">عطر كراش أون مي</h2>
+        <div class="product-info">
+          <span class="info-badge">الحجم: 50 مل</span>
+          <span class="price-badge">السعر: 160 دينار</span>
+        </div>
+        <form class="order-form" onsubmit="sendWhatsAppOrder(event, 'عطر كراش أون مي', '50 مل', '160 دينار', 'etar3.jpg', 'name3', 'phone3', 'qty3', 'err3')">
+          <div class="form-group">
+            <label>الاسم الثلاثي <span class="required-star">*</span></label>
+            <input type="text" id="name3" class="form-control" placeholder="أدخل اسمك الثلاثي">
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف <span class="required-star">*</span></label>
+            <input type="tel" id="phone3" class="form-control" placeholder="09X XXXXXXX">
+          </div>
+          <div class="form-group">
+            <label>الكمية المطلوبة</label>
+            <input type="number" id="qty3" class="form-control" value="1" min="1" max="100">
+          </div>
+          <p id="err3" class="error-msg">الرجاء تعبئة الاسم ورقم الهاتف أولاً</p>
+          <button type="submit" class="btn-whatsapp">طلب عبر الواتساب</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- عطر 4 -->
+    <div class="product-card">
+      <img src="etar4.jpg" alt="عطر زيرجوف ناكسوس" class="product-img">
+      <div class="product-details">
+        <h2 class="product-title">عطر زيرجوف ناكسوس</h2>
+        <div class="product-info">
+          <span class="info-badge">الحجم: 50 مل</span>
+          <span class="price-badge">السعر: 140 دينار</span>
+        </div>
+        <form class="order-form" onsubmit="sendWhatsAppOrder(event, 'عطر زيرجوف ناكسوس', '50 مل', '140 دينار', 'etar4.jpg', 'name4', 'phone4', 'qty4', 'err4')">
+          <div class="form-group">
+            <label>الاسم الثلاثي <span class="required-star">*</span></label>
+            <input type="text" id="name4" class="form-control" placeholder="أدخل اسمك الثلاثي">
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف <span class="required-star">*</span></label>
+            <input type="tel" id="phone4" class="form-control" placeholder="09X XXXXXXX">
+          </div>
+          <div class="form-group">
+            <label>الكمية المطلوبة</label>
+            <input type="number" id="qty4" class="form-control" value="1" min="1" max="100">
+          </div>
+          <p id="err4" class="error-msg">الرجاء تعبئة الاسم ورقم الهاتف أولاً</p>
+          <button type="submit" class="btn-whatsapp">طلب عبر الواتساب</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- عطر 5 -->
+    <div class="product-card">
+      <img src="etar5.jpg" alt="عطر كيالي مارشميلو" class="product-img">
+      <div class="product-details">
+        <h2 class="product-title">عطر كيالي مارشميلو</h2>
+        <div class="product-info">
+          <span class="info-badge">الحجم: 35 مل</span>
+          <span class="price-badge">السعر: 55 دينار</span>
+        </div>
+        <form class="order-form" onsubmit="sendWhatsAppOrder(event, 'عطر كيالي مارشميلو', '35 مل', '55 دينار', 'etar5.jpg', 'name5', 'phone5', 'qty5', 'err5')">
+          <div class="form-group">
+            <label>الاسم الثلاثي <span class="required-star">*</span></label>
+            <input type="text" id="name5" class="form-control" placeholder="أدخل اسمك الثلاثي">
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف <span class="required-star">*</span></label>
+            <input type="tel" id="phone5" class="form-control" placeholder="09X XXXXXXX">
+          </div>
+          <div class="form-group">
+            <label>الكمية المطلوبة</label>
+            <input type="number" id="qty5" class="form-control" value="1" min="1" max="100">
+          </div>
+          <p id="err5" class="error-msg">الرجاء تعبئة الاسم ورقم الهاتف أولاً</p>
+          <button type="submit" class="btn-whatsapp">طلب عبر الواتساب</button>
+        </form>
+      </div>
+    </div>
+gwgwgggrr
+    <!-- عطر 6 -->
+    <div class="product-card">
+      <img src="etar6.jpg" alt="عطر بلوشانيل" class="product-img">
+      <div class="product-details">
+        <h2 class="product-title">عطر بلوشانيل</h2>
+        <div class="product-info">
+          <span class="info-badge">الحجم: 50 مل</span>
+          <span class="price-badge">السعر: 55 دينار</span>
+        </div>
+        <form class="order-form" onsubmit="sendWhatsAppOrder(event, 'عطر بلوشانيل', '50 مل', '55 دينار', 'etar6.jpg', 'name6', 'phone6', 'qty6', 'err6')">
+          <div class="form-group">
+            <label>الاسم الثلاثي <span class="required-star">*</span></label>
+            <input type="text" id="name6" class="form-control" placeholder="أدخل اسمك الثلاثي">
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف <span class="required-star">*</span></label>
+            <input type="tel" id="phone6" class="form-control" placeholder="09X XXXXXXX">
+          </div>
+          <div class="form-group">
+            <label>الكمية المطلوبة</label>
+            <input type="number" id="qty6" class="form-control" value="1" min="1" max="100">
+          </div>
+          <p id="err6" class="error-msg">الرجاء تعبئة الاسم ورقم الهاتف أولاً</p>
+          <button type="submit" class="btn-whatsapp">طلب عبر الواتساب</button>
+        </form>
+      </div>
+    </div>
+   
+  </div>
+        
+  <script>
+    function sendWhatsAppOrder(event, perfumeName, size, price, imgFileName, nameId, phoneId, qtyId, errId) {
+      event.preventDefault();
+
+      // رقم صاحب المحل على الواتساب (ضع رقمك الحقيقي هنا مسبوقاً برمز الدولة 218)
+      const sellerPhone = "218923443927"; 
+      
+      const nameInput = document.getElementById(nameId).value.trim();
+      const phoneInput = document.getElementById(phoneId).value.trim();
+      const qtyInput = document.getElementById(qtyId).value || "1";
+      const errorMsg = document.getElementById(errId);
+
+
+
+
+
+      if (nameInput === "" || phoneInput === "") {
+        errorMsg.style.display = "block";
+        return;  
+      } else {
+        errorMsg.style.display = "none";
+      }
+
+      const imageFullUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/' + imgFileName;
+const message = "السلام عليكم، أريد تأكيد طلب جديد من المتجر:\n\n" +
+                "العطر: " + perfumeName + "\n" +
+                "الحجم: " + size + "\n" +
+                "السعر: " + price + "\n" +
+                "الكمية: " + qtyInput + "\n\n" +
+                "اسم الزبون: " + nameInput + "\n" +
+                "رقم الهاتف: " + phoneInput + "\n\n" +
+                "رابط صورة المنتج:\n" + imageFullUrl;
+
+
+      
+
+      const whatsappUrl = "https://wa.me/" + sellerPhone + "?text=" + encodeURIComponent(message);
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
