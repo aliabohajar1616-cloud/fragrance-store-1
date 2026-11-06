@@ -234,8 +234,8 @@
                 errAddress.style.display = "none";
             }
 
-            // رابط الصورة الصحيح والمطابق تماماً لنطاقك الأساسي بدون مجلدات زائدة
-            const fullImageUrl = "https://alibohajar1616-cloud.github.io/" + imageName;
+            // بناء الرابط التلقائي المباشر بناءً على موقع المتجر الحالي لضمان عمله 100% دون خطأ 404
+            const fullImageUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1) + imageName;
 
             // نص الرسالة المتكامل
             const message = "تأكيد طلب جديد من متجر بن عوف للعطور%0A" +
@@ -252,7 +252,7 @@
             window.open(whatsappUrl, '_blank');
         }
     </script>
-
+ 
 </body>
 </html>
-
+إنشاء
