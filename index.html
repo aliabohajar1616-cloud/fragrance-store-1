@@ -12,7 +12,6 @@
         .header { background-color: #3d2b1f; color: #ffffff; text-align: center; padding: 45px 20px; border-radius: 0 0 25px 25px; margin-bottom: 35px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
         .header h1 { font-size: 42px; margin-bottom: 12px; font-weight: bold; letter-spacing: 1px; color: #ffffff; }
         
-        /* خلفية العبارة الفرعية بلون بني أفتح */
         .header p { 
             display: inline-block;
             background-color: #5c4033; 
@@ -218,7 +217,7 @@
         function sendWhatsAppOrder(event, perfumeName, price, imageName, nameId, phoneId, qtyId, addressId, errorId) {
             event.preventDefault();
 
-            // رقم هاتف صاحب المحل
+            // رقم هاتف صاحب المحل المعتمد
             const sellerPhone = "218923443927"; 
 
             const nameInput = document.getElementById(nameId).value.trim();
@@ -227,7 +226,7 @@
             const addressInput = document.getElementById(addressId).value.trim();
             const errAddress = document.getElementById(errorId);
             
-            // التحقق الجبري من العنوان
+            // التحقق الجبري من إدخال العنوان
             if (addressInput === "") {
                 errAddress.style.display = "block";
                 return;
@@ -235,10 +234,13 @@
                 errAddress.style.display = "none";
             }
 
-            // إرسال اسم الصورة بشكل مباشر ونظيف يمنع خطأ 404
+            // رابط الصورة الصحيح والمطابق تماماً لنطاقك الأساسي بدون مجلدات زائدة
+            const fullImageUrl = "https://alibohajar1616-cloud.github.io/" + imageName;
+
+            // نص الرسالة المتكامل
             const message = "تأكيد طلب جديد من متجر بن عوف للعطور%0A" +
                             "---------------------------------%0A" +
-                            "ملف الصورة: " + imageName + "%0A" +
+                            "رابط الصورة: " + fullImageUrl + "%0A" +
                             "الاسم: " + nameInput + "%0A" +
                             "العطر: " + perfumeName + "%0A" +
                             "السعر: " + price + "%0A" +
