@@ -6,37 +6,49 @@
     <title>بن عوف للعطور | Bin Ouf Perfumes</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: Tahoma, Arial, sans-serif; background-color: #f4f4f4; color: #333; direction: rtl; text-align: right; }
+        body { font-family: Tahoma, Arial, sans-serif; background-color: #f7f5f2; color: #333; direction: rtl; text-align: right; }
         
-        /* الهيدر البني الداكن الفخم كما طلبته */
-        .header { background-color: #3d2b1f; color: #ffffff; text-align: center; padding: 40px 20px; border-radius: 0 0 15px 15px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .header h1 { font-size: 38px; margin-bottom: 10px; font-weight: bold; }
-        .header p { font-size: 18px; color: #ddd; }
+        /* الهيدر الفخم مع تدرج الألوان البنية الطلوبة */
+        .header { background-color: #3d2b1f; color: #ffffff; text-align: center; padding: 45px 20px; border-radius: 0 0 25px 25px; margin-bottom: 35px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+        .header h1 { font-size: 42px; margin-bottom: 12px; font-weight: bold; letter-spacing: 1px; color: #ffffff; }
         
-        /* حاوية المنتجات */
-        .products-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 15px 40px 15px; }
-        .product-card { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 360px; padding: 20px; border: 1px solid #e0e0e0; display: flex; flex-direction: column; justify-content: space-between; }
+        /* خلفية عبارة الوصف بلون بني أفتح بقليل وبشكل أنيق */
+        .header p { 
+            display: inline-block;
+            background-color: #5c4033; 
+            color: #f3e9e1; 
+            font-size: 17px; 
+            font-weight: 600; 
+            padding: 8px 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            border: 1px solid #704b3e;
+        }
         
-        /* صور واضحة وكبيرة */
-        .product-card img { width: 100%; height: 320px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        /* حاوية المنتجات بتصميم واضح ومرتب */
+        .products-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 15px 50px 15px; }
+        .product-card { background: #ffffff; border-radius: 14px; box-shadow: 0 6px 20px rgba(61,43,31,0.08); width: 360px; padding: 22px; border: 1px solid #e8dbd1; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); }
         
-        .product-title { font-size: 22px; font-weight: bold; margin-bottom: 6px; color: #2c3e50; }
-        .product-size { color: #7f8c8d; font-size: 15px; margin-bottom: 6px; }
+        /* صور واضحة وكبيرة للمنتجات */
+        .product-card img { width: 100%; height: 320px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; border: 1px solid #f0f0f0; }
+        
+        .product-title { font-size: 23px; font-weight: bold; margin-bottom: 6px; color: #3d2b1f; }
+        .product-size { color: #8c6239; font-size: 15px; margin-bottom: 6px; font-weight: 600; }
         .product-price { font-size: 20px; color: #27ae60; font-weight: bold; margin-bottom: 15px; }
         
-        label { font-size: 14px; font-weight: bold; color: #444; margin-top: 10px; display: block; }
-        input { width: 100%; padding: 10px; margin-top: 4px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; outline: none; }
-        input:focus { border-color: #25d366; }
+        label { font-size: 14px; font-weight: bold; color: #4a3b32; margin-top: 10px; display: block; }
+        input { width: 100%; padding: 11px; margin-top: 5px; margin-bottom: 8px; border: 1px solid #d4c5bc; border-radius: 8px; font-size: 14px; outline: none; background-color: #fcfbfa; }
+        input:focus { border-color: #3d2b1f; background-color: #fff; }
         
-        button { background-color: #25d366; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; margin-top: 12px; transition: background 0.3s; }
+        button { background-color: #25d366; color: white; border: none; padding: 13px; width: 100%; border-radius: 8px; cursor: pointer; font-size: 17px; font-weight: bold; margin-top: 12px; transition: background 0.3s; box-shadow: 0 4px 10px rgba(37,211,102,0.2); }
         button:hover { background-color: #1ebd56; }
         
-        .error-msg { color: #e74c3c; font-size: 12px; display: none; margin-top: 2px; margin-bottom: 8px; font-weight: bold; }
+        .error-msg { color: #c0392b; font-size: 12px; display: none; margin-top: 2px; margin-bottom: 8px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر البني الداكن -->
     <div class="header">
         <h1>بن عوف للعطور</h1>
         <p>فخامة العطور الشرقية والغربية بين يديك</p>
@@ -44,15 +56,15 @@
 
     <div class="products-container">
 
-        <!-- etar1: ديمارلي ألتير -->
+        <!-- etar1 -->
         <div class="product-card">
             <div>
-                <img src="etar1.jpg" alt="عطر ديمارلي ألتير">
+                <img src="etar1.jpg" id="img1" alt="عطر ديمارلي ألتير">
                 <div class="product-title">عطر ديمارلي ألتير</div>
                 <div class="product-size">الحجم: 50 مل</div>
                 <div class="product-price">السعر: 70 دينار</div>
             </div>
-            <form onsubmit="sendWhatsAppOrder(event, 'عطر ديمارلي ألتير', '70 دينار', 'name1', 'phone1', 'qty1', 'address1', 'err-address1')">
+            <form onsubmit="sendWhatsAppOrder(event, 'عطر ديمارلي ألتير', '70 دينار', 'img1', 'name1', 'phone1', 'qty1', 'address1', 'err-address1')">
                 <label>الاسم الثلاثي *</label>
                 <input type="text" id="name1" placeholder="أدخل اسمك الثلاثي" required>
 
@@ -70,15 +82,15 @@
             </form>
         </div>
 
-        <!-- etar2: خمرة -->
+        <!-- etar2 -->
         <div class="product-card">
             <div>
-                <img src="etar2.jpg" alt="عطر خمرة">
+                <img src="etar2.jpg" id="img2" alt="عطر خمرة">
                 <div class="product-title">عطر خمرة</div>
                 <div class="product-size">الحجم: 50 مل</div>
                 <div class="product-price">السعر: 90 دينار</div>
             </div>
-            <form onsubmit="sendWhatsAppOrder(event, 'عطر خمرة', '90 دينار', 'name2', 'phone2', 'qty2', 'address2', 'err-address2')">
+            <form onsubmit="sendWhatsAppOrder(event, 'عطر خمرة', '90 دينار', 'img2', 'name2', 'phone2', 'qty2', 'address2', 'err-address2')">
                 <label>الاسم الثلاثي *</label>
                 <input type="text" id="name2" placeholder="أدخل اسمك الثلاثي" required>
 
@@ -96,15 +108,15 @@
             </form>
         </div>
 
-        <!-- etar3: كراش أون مي -->
+        <!-- etar3 -->
         <div class="product-card">
             <div>
-                <img src="etar3.jpg" alt="عطر كراش أون مي">
+                <img src="etar3.jpg" id="img3" alt="عطر كراش أون مي">
                 <div class="product-title">عطر كراش أون مي</div>
                 <div class="product-size">الحجم: 50 مل</div>
                 <div class="product-price">السعر: 160 دينار</div>
             </div>
-            <form onsubmit="sendWhatsAppOrder(event, 'عطر كراش أون مي', '160 دينار', 'name3', 'phone3', 'qty3', 'address3', 'err-address3')">
+            <form onsubmit="sendWhatsAppOrder(event, 'عطر كراش أون مي', '160 دينار', 'img3', 'name3', 'phone3', 'qty3', 'address3', 'err-address3')">
                 <label>الاسم الثلاثي *</label>
                 <input type="text" id="name3" placeholder="أدخل اسمك الثلاثي" required>
 
@@ -122,15 +134,15 @@
             </form>
         </div>
 
-        <!-- etar4: زيرجوف ناكسوس -->
+        <!-- etar4 -->
         <div class="product-card">
             <div>
-                <img src="etar4.jpg" alt="عطر زيرجوف ناكسوس">
+                <img src="etar4.jpg" id="img4" alt="عطر زيرجوف ناكسوس">
                 <div class="product-title">عطر زيرجوف ناكسوس</div>
                 <div class="product-size">الحجم: 50 مل</div>
                 <div class="product-price">السعر: 140 دينار</div>
             </div>
-            <form onsubmit="sendWhatsAppOrder(event, 'عطر زيرجوف ناكسوس', '140 دينار', 'name4', 'phone4', 'qty4', 'address4', 'err-address4')">
+            <form onsubmit="sendWhatsAppOrder(event, 'عطر زيرجوف ناكسوس', '140 دينار', 'img4', 'name4', 'phone4', 'qty4', 'address4', 'err-address4')">
                 <label>الاسم الثلاثي *</label>
                 <input type="text" id="name4" placeholder="أدخل اسمك الثلاثي" required>
 
@@ -148,15 +160,15 @@
             </form>
         </div>
 
-        <!-- etar5: كيالي مارشميلو -->
+        <!-- etar5 -->
         <div class="product-card">
             <div>
-                <img src="etar5.jpg" alt="عطر كيالي مارشميلو">
+                <img src="etar5.jpg" id="img5" alt="عطر كيالي مارشميلو">
                 <div class="product-title">عطر كيالي مارشميلو</div>
                 <div class="product-size">الحجم: 35 مل</div>
                 <div class="product-price">السعر: 55 دينار</div>
             </div>
-            <form onsubmit="sendWhatsAppOrder(event, 'عطر كيالي مارشميلو', '55 دينار', 'name5', 'phone5', 'qty5', 'address5', 'err-address5')">
+            <form onsubmit="sendWhatsAppOrder(event, 'عطر كيالي مارشميلو', '55 دينار', 'img5', 'name5', 'phone5', 'qty5', 'address5', 'err-address5')">
                 <label>الاسم الثلاثي *</label>
                 <input type="text" id="name5" placeholder="أدخل اسمك الثلاثي" required>
 
@@ -174,15 +186,15 @@
             </form>
         </div>
 
-        <!-- etar6: بلوشانيل -->
+        <!-- etar6 -->
         <div class="product-card">
             <div>
-                <img src="etar6.jpg" alt="عطر بلوشانيل">
+                <img src="etar6.jpg" id="img6" alt="عطر بلوشانيل">
                 <div class="product-title">عطر بلوشانيل</div>
                 <div class="product-size">الحجم: 50 مل</div>
                 <div class="product-price">السعر: 55 دينار</div>
             </div>
-            <form onsubmit="sendWhatsAppOrder(event, 'عطر بلوشانيل', '55 دينار', 'name6', 'phone6', 'qty6', 'address6', 'err-address6')">
+            <form onsubmit="sendWhatsAppOrder(event, 'عطر بلوشانيل', '55 دينار', 'img6', 'name6', 'phone6', 'qty6', 'address6', 'err-address6')">
                 <label>الاسم الثلاثي *</label>
                 <input type="text" id="name6" placeholder="أدخل اسمك الثلاثي" required>
 
@@ -203,19 +215,23 @@
     </div>
 
     <script>
-        function sendWhatsAppOrder(event, perfumeName, price, nameId, phoneId, qtyId, addressId, errorId) {
+        function sendWhatsAppOrder(event, perfumeName, price, imgId, nameId, phoneId, qtyId, addressId, errorId) {
             event.preventDefault();
 
-            // ضع رقم هاتف المتجر الصحيح هنا (مفتاح ليبيا 218)
-            const sellerPhone = "2189xxxxxxx"; 
+            // رقم هاتف صاحب المحل
+            const sellerPhone = "218923443927"; 
 
             const nameInput = document.getElementById(nameId).value.trim();
             const phoneInput = document.getElementById(phoneId).value.trim();
             const qtyInput = document.getElementById(qtyId).value.trim();
             const addressInput = document.getElementById(addressId).value.trim();
             const errAddress = document.getElementById(errorId);
+            
+            // جلب رابط صورة المنتج لإرسالها مع رسالة الواتساب
+            const imgElement = document.getElementById(imgId);
+            const imgSrc = imgElement ? window.location.origin + "/" + imgElement.getAttribute("src") : "";
 
-            // التحقق الجبري من العنوان (لا يفتح الواتساب إلا لو كتبه)
+            // التحقق الجبري من إدخال العنوان
             if (addressInput === "") {
                 errAddress.style.display = "block";
                 return;
@@ -223,9 +239,10 @@
                 errAddress.style.display = "none";
             }
 
-            // نص الرسالة المنظم للواتساب
+            // نص الرسالة المتكامل متضمناً صورة المنتج والبيانات
             const message = "تأكيد طلب جديد من متجر بن عوف للعطور%0A" +
                             "---------------------------------%0A" +
+                            "صورة المنتج: " + imgSrc + "%0A" +
                             "الاسم: " + nameInput + "%0A" +
                             "العطر: " + perfumeName + "%0A" +
                             "السعر: " + price + "%0A" +
